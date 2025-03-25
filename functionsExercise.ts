@@ -30,3 +30,52 @@ console.log(isLeapYear(2013));
 // OR...
 // - year is a multiple of 400
 // hint - use modulo
+
+type Persoon ={
+    name: string;
+    age:number;
+}
+
+const per1: Persoon = {
+    name: "myName",
+    age: 13
+};
+
+const per2: Persoon = {
+    name: "my2ndName",
+    age: 24
+};
+
+const arrOfPers: Persoon[] = [per1, per2];
+for(let [index, per] of arrOfPers.entries()){
+    console.log(`${index}: ${Object.values(per)}`);
+}
+
+function getRandomElement1<T>(list:T[]) : T {
+    const randIdx = Math.floor(Math.random() * list.length)
+    return list[randIdx];
+}
+
+const getRandomElement2 = <T>(list:T[]):T=>{
+    return list[0];
+}
+const getRandomElement3 = function<T>(list:T[]):T{
+    return list[0];
+}
+
+function merge1<T, U>(obj1: T, obj2: U){
+    return {
+        ...obj1, 
+        ...obj2
+    };
+}
+function mergeObjectsOnly<T extends object, U extends object>(obj1: T, obj2: U){ //  we can also create an interface and extend to it instead of the built in object for example. 
+    return {
+        ...obj1, 
+        ...obj2
+    };
+}
+
+const comboObj1 = mergeObjectsOnly({name:"Liad"}, 9);
+const someObj: object = {name: "Liad"}
+

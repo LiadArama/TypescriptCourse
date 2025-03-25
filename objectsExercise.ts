@@ -42,3 +42,22 @@ const cats: Movie = {
 // getProfit(cats) => -21166652
 const getProfit = (movie: Movie) :number => movie.boxOffice.grossWorldwide - movie.boxOffice.budget; 
 console.log(getProfit(cats));
+
+function someDemo1 (x: string | number, y: string|boolean){
+  if(x == y){
+    x.toUpperCase();
+  }
+}
+
+
+interface Movie1{
+  title: string;
+}
+interface Show1{
+  runtime: number;
+}
+function getRuntim1(el: Movie1| Show1){
+  if( el instanceof Movie1)
+}
+
+getRuntim1({title: "title"});
